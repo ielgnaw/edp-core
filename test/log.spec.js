@@ -1,29 +1,33 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * test_log.js ~ 2014/02/09 22:54:42
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
- *  
+ * @version $Revision$
+ * @description
+ *
  **/
-var edp = require('..');
+var log = require('../lib/log');
 
-describe("log", function(){
-    it("default", function(){
-        edp.log.trace('hello %s', 'world');
-        edp.log.debug('hello %s', 'world');
-        edp.log.info('hello %s %d %j', 'world', 123, {'a': true});
-        edp.log.warn('hello %s', 'world');
-        edp.log.error('hello %s', 'world');
-        edp.log.fatal('hello %s', 'world');
+describe('log', function(){
+    it('default', function(){
+        log.trace('hello %s', 'world');
+        log.debug('hello %s', 'world');
+        log.info('hello %s %d %j', 'world', 123, {'a': true});
+        log.warn('hello %s', 'world');
+        log.error('hello %s', 'world');
+        log.fatal('hello %s', 'world');
+        console.log();
+        log.raw( 'hello world' );
+        log.raw( 'hello world 2' );
+        log.raw( '\nhello world 3' );
     });
 });
 
